@@ -1,8 +1,13 @@
-function TodoItem({ todo, onDelete }) {
+function TodoItem({ todo, onDelete, onToggle }) {
   return (
     <li>
       <span>{todo.id}. </span>
-      <input type="checkbox" checked={todo.checked} readOnly />
+      <input
+        onClick={() => onToggle(todo.id)}
+        type="checkbox"
+        checked={todo.checked}
+        readOnly
+      />
       <span> {todo.text} </span>
       <button onClick={() => onDelete(todo.id)}>❌</button>
     </li>
