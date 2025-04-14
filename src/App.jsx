@@ -9,7 +9,7 @@ function App() {
     { id: 3, text: "리액트 복습하기", checked: false },
   ]);
 
-  let lastId = todos.length + 1;
+  let lastId = todos[todos.length - 1].id + 1;
 
   const onInsert = (text) => {
     const newTodos = [...todos, { id: lastId, text, checked: false }];
