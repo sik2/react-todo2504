@@ -30,11 +30,11 @@ function App() {
   };
 
   return (
-    <>
+    <div className="todo-app">
       <h3>todo app</h3>
       <TodoForm onInsert={onInsert} />
       <TodoList todos={todos} onDelete={onDelete} onToggle={onToggle} />
-    </>
+    </div>
   );
 }
 

@@ -1,15 +1,13 @@
 function TodoItem({ todo, onDelete, onToggle }) {
   return (
-    <li>
-      <span>{todo.id}. </span>
+    <li className="todo-item">
       <input
-        onClick={() => onToggle(todo.id)}
         type="checkbox"
         checked={todo.checked}
-        readOnly
+        onChange={() => onToggle(todo.id)}
       />
-      <span> {todo.text} </span>
-      <button onClick={() => onDelete(todo.id)}>❌</button>
+      <span className={todo.checked ? "completed" : ""}>{todo.text}</span>
+      <button onClick={() => onDelete(todo.id)}>×</button>
     </li>
   );
 }
