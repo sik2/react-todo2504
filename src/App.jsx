@@ -17,11 +17,16 @@ function App() {
     lastId++;
   };
 
+  const onDelete = (id) => {
+    const newTodos = todos.filter((todo) => todo.id !== id);
+    setTodos(newTodos);
+  };
+
   return (
     <>
       <h3>todo app</h3>
       <TodoForm onInsert={onInsert} />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} onDelete={onDelete} />
     </>
   );
 }
