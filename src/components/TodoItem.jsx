@@ -1,8 +1,10 @@
-function TodoItem() {
+function TodoItem({ todo }) {
   return (
     <li>
-      <input type="checkbox" /> 리액트 공부하기
-      <button>X</button>
+      <span>{todo.id}. </span>
+      <input type="checkbox" checked={todo.checked} />
+      <span> {todo.text} </span>
+      <button>❌</button>
     </li>
   );
 }
